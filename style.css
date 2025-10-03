@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+#banner {
+  background: url("img/banner.jpg") no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.logo-banner {
+  height: 60px;          
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;     
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); 
+}
+
+@media (min-width: 1200px) {
+  .logo-banner {
+    height: 80px;
+  }
+}
+
+
+#banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+#banner .overlay {
+  position: relative;
+  z-index: 1;
+}
+
+#banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#banner p {
+  font-size: 1.2rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  background: #ffcc00;
+  color: #222;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: #e6b800;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+#pastillas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 3rem 1rem;
+}
+
+.pastilla {
+  position: relative;
+  border-radius: 10px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.pastilla::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.pastilla::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+
+.pastilla1::before { background-image: url("img/icono1.jpg"); }
+.pastilla2::before { background-image: url("img/icono2.jpg"); }
+.pastilla3::before { background-image: url("img/icono3.jpg"); }
+.pastilla4::before { background-image: url("img/icono4.jpg"); }
+
+.pastilla h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pastilla p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.pastilla:hover::before {
+  opacity: 0.6;
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+@media (min-width: 768px) {
+  #pastillas {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+#nota-principal.overlay {
+  background: url("img/agencia.jpg") no-repeat center center/cover;
+  position: relative;
+  color: #fff;
+  padding: 4rem 2rem;
+}
+
+#nota-principal.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+#nota-principal .nota-contenido {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+  text-align: center;
+}
+
+#nota-principal h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#nota-principal p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+
+@media (min-width: 768px) {
+  #nota-principal {
+    flex-direction: row;
+  }
+
+  .nota-img {
+    flex: 1;
+    height: auto;
+    min-height: 400px;
+  }
+
+  #nota-principal article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #nota-principal {
+    flex-direction: row;
+  }
+
+  .nota-img {
+    flex: 1;
+    height: auto;
+    min-height: 400px;
+  }
+
+  #nota-principal article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#reseñas {
+  padding: 3rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background: url("img/agencia.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+.reseña {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(6px); 
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reseña:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.reseña img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #fff;
+}
+
+.reseña blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.reseña p {
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  #reseñas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+footer h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+  opacity: 0.9;
+}
+
+footer .redes {
+  margin-top: 1.5rem;
+}
+
+footer .redes a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+footer .redes a.instagram {
+  background: #E1306C; 
+}
+
+footer .redes a.facebook {
+  background: #1877F2; 
+}
+
+footer .redes a.twitter {
+  background: #1DA1F2; 
+}
+
+footer .redes a.instagram:hover {
+  background: #c72a5f;
+}
+
+footer .redes a.facebook:hover {
+  background: #145dbf;
+}
+
+footer .redes a.twitter:hover {
+  background: #0d8ddb;
+}
+
+
+
+@media (min-width: 768px) {
+  #pastillas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  #nota-principal {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  #nota-principal img {
+    max-width: 50%;
+  }
+
+  #reseñas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #pastillas {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #nota-principal .nota-contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .reseña {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
